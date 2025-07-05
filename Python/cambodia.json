@@ -1,0 +1,330 @@
+[
+  {
+    "province_name": "Banteay Meanchey",
+    "districts": [
+      { "name": "Mongkol Borei", "code": "01-02" },
+      { "name": "Phnom Srok", "code": "01-03" },
+      { "name": "Preah Netr Preah", "code": "01-04" },
+      { "name": "Ou Chrov", "code": "01-05" },
+      { "name": "Serei Saophoan municipality", "code": "01-06" },
+      { "name": "Thma Puok", "code": "01-07" },
+      { "name": "Svay Chek", "code": "01-08" },
+      { "name": "Malai", "code": "01-09" },
+      { "name": "Poipet municipality", "code": "01-10" }
+    ]
+  },
+  {
+    "province_name": "Battambang",
+    "districts": [
+      { "name": "Banan", "code": "02-01" },
+      { "name": "Thma Koul", "code": "02-02" },
+      { "name": "Battambang municipality", "code": "02-03" },
+      { "name": "Bavel", "code": "02-04" },
+      { "name": "Ek Phnom", "code": "02-05" },
+      { "name": "Moung Ruessei", "code": "02-06" },
+      { "name": "Rotanak Mondol", "code": "02-07" },
+      { "name": "Sangkae", "code": "02-08" },
+      { "name": "Samlout", "code": "02-09" },
+      { "name": "Sampov Loun", "code": "02-10" },
+      { "name": "Phnum Proek", "code": "02-11" },
+      { "name": "Kamrieng", "code": "02-12" },
+      { "name": "Koas Krala", "code": "02-13" },
+      { "name": "Rukhak Kiri", "code": "02-14" }
+    ]
+  },
+  {
+    "province_name": "Kampong Cham",
+    "districts": [
+      { "name": "Batheay", "code": "03-01" },
+      { "name": "Chamkar Leu", "code": "03-02" },
+      { "name": "Cheung Prey", "code": "03-03" },
+      { "name": "Kampong Cham municipality", "code": "03-05" },
+      { "name": "Kampong Siem", "code": "03-06" },
+      { "name": "Kang Meas", "code": "03-07" },
+      { "name": "Koh Sotin", "code": "03-08" },
+      { "name": "Prey Chhor", "code": "03-13" },
+      { "name": "Srey Santhor", "code": "03-14" },
+      { "name": "Stueng Trang", "code": "03-15" }
+    ]
+  },
+  {
+    "province_name": "Kampong Chhnang",
+    "districts": [
+      { "name": "Baribour", "code": "04-01" },
+      { "name": "Chol Kiri", "code": "04-02" },
+      { "name": "Kampong Chhnang municipality", "code": "04-03" },
+      { "name": "Kampong Leaeng", "code": "04-04" },
+      { "name": "Kampong Tralach", "code": "04-05" },
+      { "name": "Rolea B'ier", "code": "04-06" },
+      { "name": "Sameakki Mean Chey", "code": "04-07" },
+      { "name": "Tuek Phos", "code": "04-08" }
+    ]
+  },
+  {
+    "province_name": "Kampong Speu",
+    "districts": [
+      { "name": "Basedth", "code": "05-01" },
+      { "name": "Chbar Mon municipality", "code": "05-02" },
+      { "name": "Kong Pisei", "code": "05-03" },
+      { "name": "Aoral", "code": "05-04" },
+      { "name": "Odongk", "code": "05-05" },
+      { "name": "Phnom Sruoch", "code": "05-06" },
+      { "name": "Samraong Tong", "code": "05-07" },
+      { "name": "Thpong", "code": "05-08" }
+    ]
+  },
+  {
+    "province_name": "Kampong Thom",
+    "districts": [
+      { "name": "Baray", "code": "06-01" },
+      { "name": "Kampong Svay", "code": "06-02" },
+      { "name": "Stueng Saen municipality", "code": "06-03" },
+      { "name": "Prasat Balangk", "code": "06-04" },
+      { "name": "Prasat Sambour", "code": "06-05" },
+      { "name": "Sandaan", "code": "06-06" },
+      { "name": "Santuk", "code": "06-07" },
+      { "name": "Stoung", "code": "06-08" },
+      { "name": "Taing Kouk", "code": "06-09" }
+    ]
+  },
+  {
+    "province_name": "Kampot",
+    "districts": [
+      { "name": "Angkor Chey", "code": "07-01" },
+      { "name": "Banteay Meas", "code": "07-02" },
+      { "name": "Chhuk", "code": "07-03" },
+      { "name": "Chum Kiri", "code": "07-04" },
+      { "name": "Dang Tong", "code": "07-05" },
+      { "name": "Kampong Trach", "code": "07-06" },
+      { "name": "Tuek Chhou", "code": "07-07" },
+      { "name": "Kampot municipality", "code": "07-08" }
+    ]
+  },
+  {
+    "province_name": "Kandal",
+    "districts": [
+      { "name": "Kandal Stueng", "code": "08-01" },
+      { "name": "Kien Svay", "code": "08-02" },
+      { "name": "Khsach Kandal", "code": "08-03" },
+      { "name": "Kaoh Thum", "code": "08-04" },
+      { "name": "Leuk Daek", "code": "08-05" },
+      { "name": "Lvea Aem", "code": "08-06" },
+      { "name": "Mukh Kampul", "code": "08-07" },
+      { "name": "Angk Snuol", "code": "08-08" },
+      { "name": "Ponhea Lueu", "code": "08-09" },
+      { "name": "S'ang", "code": "08-10" },
+      { "name": "Ta Khmau municipality", "code": "08-11" }
+    ]
+  },
+  {
+    "province_name": "Kep",
+    "districts": [
+      { "name": "Damnak Chang'aeur", "code": "23-01" },
+      { "name": "Kep municipality", "code": "23-02" }
+    ]
+  },
+  {
+    "province_name": "Koh Kong",
+    "districts": [
+      { "name": "Botum Sakor", "code": "09-01" },
+      { "name": "Kiri Sakor", "code": "09-02" },
+      { "name": "Khemara Phoumin municipality", "code": "09-03" },
+      { "name": "Smach Mean Chey", "code": "09-04" },
+      { "name": "Mondol Seima", "code": "09-05" },
+      { "name": "Srae Ambel", "code": "09-06" },
+      { "name": "Thma Bang", "code": "09-07" }
+    ]
+  },
+  {
+    "province_name": "Kratié",
+    "districts": [
+      { "name": "Chhloung", "code": "10-01" },
+      { "name": "Kratié municipality", "code": "10-02" },
+      { "name": "Preaek Prasab", "code": "10-03" },
+      { "name": "Sambour", "code": "10-04" },
+      { "name": "Snuol", "code": "10-05" },
+      { "name": "Chetr Borei", "code": "10-06" }
+    ]
+  },
+  {
+    "province_name": "Mondulkiri",
+    "districts": [
+      { "name": "Kaev Seima", "code": "11-01" },
+      { "name": "Kaoh Nheaek", "code": "11-02" },
+      { "name": "Ou Reang", "code": "11-03" },
+      { "name": "Pechr Chenda", "code": "11-04" },
+      { "name": "Saen Monourom municipality", "code": "11-05" }
+    ]
+  },
+  {
+    "province_name": "Oddar Meanchey",
+    "districts": [
+      { "name": "Anlong Veaeng", "code": "22-01" },
+      { "name": "Banteay Ampil", "code": "22-02" },
+      { "name": "Chong Kal", "code": "22-03" },
+      { "name": "Samraong municipality", "code": "22-04" },
+      { "name": "Trapeang Prasat", "code": "22-05" }
+    ]
+  },
+  {
+    "province_name": "Pailin",
+    "districts": [
+      { "name": "Pailin municipality", "code": "24-01" },
+      { "name": "Sala Krau", "code": "24-02" }
+    ]
+  },
+  {
+    "province_name": "Phnom Penh (autonomous municipality)",
+    "districts": [
+      { "name": "Chamkar Mon", "code": "12-01" },
+      { "name": "Daun Penh", "code": "12-02" },
+      { "name": "Prampir Makara", "code": "12-03" },
+      { "name": "Tuol Kouk", "code": "12-04" },
+      { "name": "Dangkao", "code": "12-05" },
+      { "name": "Mean Chey", "code": "12-06" },
+      { "name": "Russey Keo", "code": "12-07" },
+      { "name": "Sen Sok", "code": "12-08" },
+      { "name": "Pou Senchey", "code": "12-09" },
+      { "name": "Chroy Changvar", "code": "12-10" },
+      { "name": "Prek Pnov", "code": "12-11" },
+      { "name": "Chbar Ampov", "code": "12-12" },
+      { "name": "Boeng Keng Kang", "code": "12-13" },
+      { "name": "Kamboul", "code": "12-14" }
+    ]
+  },
+  {
+    "province_name": "Preah Vihear",
+    "districts": [
+      { "name": "Chey Saen", "code": "13-01" },
+      { "name": "Chhaeb", "code": "13-02" },
+      { "name": "Choam Khsant", "code": "13-03" },
+      { "name": "Kuleaen", "code": "13-04" },
+      { "name": "Rovieng", "code": "13-05" },
+      { "name": "Sangkum Thmei", "code": "13-06" },
+      { "name": "Tbaeng Mean Chey", "code": "13-07" },
+      { "name": "Preah Vihear municipality", "code": "13-08" }
+    ]
+  },
+  {
+    "province_name": "Pursat",
+    "districts": [
+      { "name": "Bakan", "code": "15-01" },
+      { "name": "Kandieng", "code": "15-02" },
+      { "name": "Krakor", "code": "15-03" },
+      { "name": "Phnum Kravanh", "code": "15-04" },
+      { "name": "Pursat municipality", "code": "15-05" },
+      { "name": "Veal Veaeng", "code": "15-06" },
+      { "name": "Talou Sen Chey", "code": "15-07" }
+    ]
+  },
+  {
+    "province_name": "Prey Veng",
+    "districts": [
+      { "name": "Ba Phnum", "code": "14-01" },
+      { "name": "Kamchay Mear", "code": "14-02" },
+      { "name": "Kampong Trabaek", "code": "14-03" },
+      { "name": "Kanhchriech", "code": "14-04" },
+      { "name": "Me Sang", "code": "14-05" },
+      { "name": "Peam Chor", "code": "14-06" },
+      { "name": "Peam Ro", "code": "14-07" },
+      { "name": "Pea Reang", "code": "14-08" },
+      { "name": "Preah Sdach", "code": "14-09" },
+      { "name": "Prey Veaeng municipality", "code": "14-10" },
+      { "name": "Pou Rieng", "code": "14-11" },
+      { "name": "Sithor Kandal", "code": "14-12" },
+      { "name": "Svay Antor", "code": "14-13" }
+    ]
+  },
+  {
+    "province_name": "Ratanakiri",
+    "districts": [
+      { "name": "Andoung Meas", "code": "16-01" },
+      { "name": "Banlung municipality", "code": "16-02" },
+      { "name": "Bar Kaev", "code": "16-03" },
+      { "name": "Koun Mom", "code": "16-04" },
+      { "name": "Lumphat", "code": "16-05" },
+      { "name": "Ou Chum", "code": "16-06" },
+      { "name": "Ou Ya Dav", "code": "16-07" },
+      { "name": "Ta Veaeng", "code": "16-08" },
+      { "name": "Veun Sai", "code": "16-09" }
+    ]
+  },
+  {
+    "province_name": "Siem Reap",
+    "districts": [
+      { "name": "Angkor Chum", "code": "17-01" },
+      { "name": "Angkor Thom", "code": "17-02" },
+      { "name": "Banteay Srei", "code": "17-03" },
+      { "name": "Chi Kraeng", "code": "17-04" },
+      { "name": "Kralanh", "code": "17-06" },
+      { "name": "Puok", "code": "17-07" },
+      { "name": "Prasat Bakong", "code": "17-09" },
+      { "name": "Siem Reap municipality", "code": "17-10" },
+      { "name": "Sout Nikom", "code": "17-11" },
+      { "name": "Srei Snam", "code": "17-12" },
+      { "name": "Svay Leu", "code": "17-13" },
+      { "name": "Varin", "code": "17-14" }
+    ]
+  },
+  {
+    "province_name": "Sihanoukville",
+    "districts": [
+      { "name": "Preah Sihanouk municipality", "code": "18-01" },
+      { "name": "Prey Nob", "code": "18-02" },
+      { "name": "Stueng Hav", "code": "18-03" },
+      { "name": "Kampong Seila", "code": "18-04" },
+      { "name": "Koh Rong", "code": "18-05" }
+    ]
+  },
+  {
+    "province_name": "Stung Treng",
+    "districts": [
+      { "name": "Sesan", "code": "19-01" },
+      { "name": "Siem Bouk", "code": "19-02" },
+      { "name": "Siem Pang", "code": "19-03" },
+      { "name": "Stung Treng municipality", "code": "19-04" },
+      { "name": "Thala Barivat", "code": "19-05" },
+      { "name": "Borei O'Svay Sen Chey", "code": "19-06" }
+    ]
+  },
+  {
+    "province_name": "Svay Rieng",
+    "districts": [
+      { "name": "Chantrea", "code": "20-01" },
+      { "name": "Kampong Rou", "code": "20-02" },
+      { "name": "Rumduol", "code": "20-03" },
+      { "name": "Romeas Haek", "code": "20-04" },
+      { "name": "Svay Chrum", "code": "20-05" },
+      { "name": "Svay Rieng municipality", "code": "20-06" },
+      { "name": "Svay Teab", "code": "20-07" },
+      { "name": "Bavet municipality", "code": "20-08" }
+    ]
+  },
+  {
+    "province_name": "Takéo",
+    "districts": [
+      { "name": "Angkor Borei", "code": "21-01" },
+      { "name": "Bati", "code": "21-02" },
+      { "name": "Bourei Cholsar", "code": "21-03" },
+      { "name": "Kiri Vong", "code": "21-04" },
+      { "name": "Kaoh Andaet", "code": "21-05" },
+      { "name": "Prey Kabbas", "code": "21-06" },
+      { "name": "Samraong", "code": "21-07" },
+      { "name": "Doun Kaev municipality", "code": "21-08" },
+      { "name": "Tram Kak", "code": "21-09" },
+      { "name": "Treang", "code": "21-10" }
+    ]
+  },
+  {
+    "province_name": "Tboung Khmum",
+    "districts": [
+      { "name": "Dambae", "code": "25-01" },
+      { "name": "Krouch Chhmar", "code": "25-02" },
+      { "name": "Memot", "code": "25-03" },
+      { "name": "Ou Reang Ov", "code": "25-04" },
+      { "name": "Ponhea Kraek", "code": "25-05" },
+      { "name": "Suong municipality", "code": "25-06" },
+      { "name": "Tboung Khmum", "code": "25-07" }
+    ]
+  }
+]
