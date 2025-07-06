@@ -137,7 +137,6 @@ JOIN
     Promotion AS p ON p.promotion_id = pp.promotion_id;
 
 -- Drop and recreate the view for feedback averages
-DROP VIEW IF EXISTS productFeedbackDataAVG;
 CREATE VIEW productFeedbackDataAVG AS
 SELECT
     product_code,
@@ -209,6 +208,13 @@ select * from product limit 1;
 select * from productshowinformation p where p.name like "%hardware%" order by p.price DESC;
 
 select * from category c;
+
+delete from productsupplier ;
+
+drop database computer_shop;
+create database computer_shop;
+use computer_shop;
+select count(*) from product;
 
 
 
