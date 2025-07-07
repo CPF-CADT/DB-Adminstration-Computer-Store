@@ -207,8 +207,35 @@ CREATE TABLE two_fa_token (
     FOREIGN KEY (customer_id) REFERENCES customer(customer_id) ON DELETE CASCADE ON UPDATE CASCADE
 );
 
+
+-- new task to fixing triger
+CREATE TABLE IF NOT EXISTS audit_log (
+    log_id INT PRIMARY KEY AUTO_INCREMENT,
+    table_name VARCHAR(100),
+    record_id VARCHAR(255),
+    action VARCHAR(50),
+    change_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    old_data TEXT,
+    new_data TEXT
+);
+ALTER TABLE orders
+DROP FOREIGN KEY fk_order_address;
+
+ALTER TABLE orders
+ADD CONSTRAINT fk_order_address
+FOREIGN KEY (address_id) REFERENCES address(address_id)
+ON DELETE CASCADE;
+ALTER TABLE orderitem
+DROP FOREIGN KEY fk_order_item_product;
+
+ALTER TABLE orderitem
+ADD CONSTRAINT fk_order_item_product
+FOREIGN KEY (product_code) REFERENCES product(product_code)
+ON DELETE CASCADE;
+
 CREATE TABLE IF NOT EXISTS `roles` (
   role_id INT AUTO_INCREMENT PRIMARY KEY,
   role_name VARCHAR(255) NOT NULL UNIQUE,
   created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
+
