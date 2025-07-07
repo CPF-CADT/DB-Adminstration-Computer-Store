@@ -215,6 +215,8 @@ drop database computer_shop;
 create database computer_shop;
 use computer_shop;
 select count(*) from product;
+desc paymenttransaction;
 
+select * from staff;
 
 
