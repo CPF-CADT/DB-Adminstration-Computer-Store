@@ -79,7 +79,6 @@
 -- 
 
 USE computer_shop;
-
 -- Drop the function if it exists (MySQL requires this before re-creating)
 -- DROP FUNCTION IF EXISTS countFeedbackByProduct;
 
@@ -195,6 +194,12 @@ FROM
     ProductFeedback AS pf
 JOIN
     customer AS c ON c.customer_id = pf.customer_id;
+
+
+create or replace view showDatabaseUser as
+	select  u.`User`,u.Host from mysql.`user` u where u.`User` not in (select role_name from roles);
+
+select * from showDatabaseUser;
 
 use computer_shop;
 show tables;
@@ -369,3 +374,22 @@ END$$
 
 -- Reset the delimiter back to the default.
 DELIMITER ;
+select * from product limit 1;
+
+
+
+select * from productshowinformation p where p.name like "%hardware%" order by p.price DESC;
+
+select * from category c;
+
+delete from productsupplier ;
+
+drop database computer_shop;
+create database computer_shop;
+use computer_shop;
+select count(*) from product;
+desc paymenttransaction;
+
+select * from staff;
+
+

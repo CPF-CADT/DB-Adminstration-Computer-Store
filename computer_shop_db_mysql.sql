@@ -207,6 +207,7 @@ CREATE TABLE two_fa_token (
     FOREIGN KEY (customer_id) REFERENCES customer(customer_id) ON DELETE CASCADE ON UPDATE CASCADE
 );
 
+
 -- new task to fixing triger
 CREATE TABLE IF NOT EXISTS auditLog (
     log_id INT PRIMARY KEY AUTO_INCREMENT,
@@ -231,3 +232,10 @@ ALTER TABLE orderitem
 ADD CONSTRAINT fk_order_item_product
 FOREIGN KEY (product_code) REFERENCES product(product_code)
 ON DELETE CASCADE;
+
+CREATE TABLE IF NOT EXISTS `roles` (
+  role_id INT AUTO_INCREMENT PRIMARY KEY,
+  role_name VARCHAR(255) NOT NULL UNIQUE,
+  created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
