@@ -4,7 +4,7 @@ USE computer_shop;
 -- select * from product;
 -- 1. View: customer_order_summary
 -- Description: Summarizes total number of orders and total amount spent by each customer.
-CREATE VIEW customer_order_summary AS
+CREATE VIEW customerOrderSummary AS
 SELECT
     c.customer_id,
     c.name AS customer_name,
@@ -24,7 +24,7 @@ ORDER BY
 
 -- 2. View: product_sales_performance
 -- Description: Shows total quantity sold and total revenue generated for each product.
-CREATE VIEW product_sales_performance AS
+CREATE VIEW productSalesPerformance AS
 SELECT
     p.product_code,
     p.name AS product_name,
@@ -46,7 +46,7 @@ ORDER BY
     total_revenue DESC;
 -- View 3: Active Staff Performance
 -- Purpose: Shows staff managing orders, with total order value handled and number of orders, for active staff only.
-CREATE VIEW staff_performance AS
+CREATE VIEW staffPerformance AS
 SELECT 
     s.staff_id,
     s.name AS staff_name,
@@ -64,7 +64,7 @@ HAVING total_orders_handled > 0;
 
 -- View 4: Payment Method Usage
 -- Purpose: Analyzes payment method usage, showing transaction counts and total amounts by method.
-CREATE VIEW payment_method_usage AS
+CREATE VIEW paymentMethodUsage AS
 SELECT 
     pm.pay_method_id,
     pm.pay_method,
@@ -80,7 +80,7 @@ ORDER BY total_amount DESC;
 
 -- View 5: Promotion Effectiveness
 -- Purpose: Evaluates promotions by calculating total sales under each promotion and affected products.
-CREATE VIEW promotion_effectiveness AS
+CREATE VIEW promotionEffectiveness AS
 SELECT 
     p.promotion_id,
     p.title AS promotion_title,
@@ -97,7 +97,7 @@ GROUP BY p.promotion_id, p.title, p.discount_type, p.discount_value;
 
 -- View 6: Customer Feedback Insights
 -- Purpose: Summarizes product feedback, including average rating and feedback count per product.
-CREATE VIEW customer_feedback_insights AS
+CREATE VIEW customerFeedbackInsights AS
 SELECT 
     p.product_code,
     p.name AS product_name,
@@ -112,7 +112,7 @@ ORDER BY average_rating DESC;
 
 -- 7. View: top_selling_categories
 -- Description: Identifies categories with the highest total sales revenue.
-CREATE VIEW top_selling_categories AS
+CREATE VIEW topSellingCategories AS
 SELECT
     cat.category_id,
     cat.title AS category_name,
@@ -130,7 +130,7 @@ ORDER BY
 
 -- 8. View: pending_orders_details
 -- Description: Provides detailed information for all orders that are currently in 'Pending' status.
-CREATE VIEW pending_orders_details AS
+CREATE VIEW pendingOrdersDetails AS
 SELECT
     o.order_id,
     o.order_date,
@@ -153,7 +153,7 @@ WHERE
 
 -- View 9: Supplier Performance
 -- Purpose: Evaluates suppliers by total products supplied and supply cost, with recent supply activity.
-CREATE VIEW supplier_performance AS
+CREATE VIEW supplierPerformance AS
 SELECT 
     s.supplier_id,
     s.name AS supplier_name,
@@ -169,7 +169,7 @@ ORDER BY total_supply_cost DESC;
 
 -- 10. View: product_stock_alerts
 -- Description: Lists products with low stock quantity (less than 10) and their last restock date.
-CREATE VIEW product_stock_alerts AS
+CREATE VIEW productStockAlerts AS
 SELECT
     p.product_code,
     p.name AS product_name,
