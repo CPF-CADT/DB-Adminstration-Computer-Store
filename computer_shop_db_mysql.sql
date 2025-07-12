@@ -208,7 +208,7 @@ CREATE TABLE two_fa_token (
 );
 
 -- new task to fixing triger
-CREATE TABLE IF NOT EXISTS audit_log (
+CREATE TABLE IF NOT EXISTS auditLog (
     log_id INT PRIMARY KEY AUTO_INCREMENT,
     table_name VARCHAR(100),
     record_id VARCHAR(255),
