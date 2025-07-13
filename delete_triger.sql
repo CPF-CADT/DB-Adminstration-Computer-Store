@@ -18,15 +18,15 @@ USE computer_shop;
 -- select * from inventorylog;
 -- select * from customer;
 -- select * from productpromotion;
--- select* from audit_log;
+-- select* from auditLog;
 DELIMITER //
 
 -- Trigger for customer table deletions
-CREATE TRIGGER customer_delete
+CREATE TRIGGER customerDelete
 AFTER DELETE ON customer
 FOR EACH ROW
 BEGIN
-    INSERT INTO audit_log (table_name, record_id, action, old_data)
+    INSERT INTO auditLog (table_name, record_id, action, old_data)
     VALUES (
         'customer',
         OLD.customer_id,
@@ -40,7 +40,7 @@ CREATE TRIGGER staff_delete
 AFTER DELETE ON staff
 FOR EACH ROW
 BEGIN
-    INSERT INTO audit_log (table_name, record_id, action, old_data)
+    INSERT INTO auditLog (table_name, record_id, action, old_data)
     VALUES (
         'staff',
         OLD.staff_id,
@@ -50,11 +50,11 @@ BEGIN
 END //
 
 -- Trigger for paymentmethod table deletions
-CREATE TRIGGER paymentmethod_delete
+CREATE TRIGGER paymentmethodDelete
 AFTER DELETE ON paymentmethod
 FOR EACH ROW
 BEGIN
-    INSERT INTO audit_log (table_name, record_id, action, old_data)
+    INSERT INTO auditLog (table_name, record_id, action, old_data)
     VALUES (
         'paymentmethod',
         OLD.pay_method_id,
@@ -64,11 +64,11 @@ BEGIN
 END //
 
 -- Trigger for product table deletions
-CREATE TRIGGER product_delete
+CREATE TRIGGER productDelete
 AFTER DELETE ON product
 FOR EACH ROW
 BEGIN
-    INSERT INTO audit_log (table_name, record_id, action, old_data)
+    INSERT INTO auditLog (table_name, record_id, action, old_data)
     VALUES (
         'product',
         OLD.product_code,
@@ -78,11 +78,11 @@ BEGIN
 END //
 
 -- Trigger for inventorylog table deletions
-CREATE TRIGGER inventorylog_delete
+CREATE TRIGGER inventorylogDelete
 AFTER DELETE ON inventorylog
 FOR EACH ROW
 BEGIN
-    INSERT INTO audit_log (table_name, record_id, action, old_data)
+    INSERT INTO auditLog (table_name, record_id, action, old_data)
     VALUES (
         'inventorylog',
         OLD.log_id,
@@ -92,11 +92,11 @@ BEGIN
 END //
 
 -- Trigger for orders table deletions
-CREATE TRIGGER orders_delete
+CREATE TRIGGER ordersDelete
 AFTER DELETE ON orders
 FOR EACH ROW
 BEGIN
-    INSERT INTO audit_log (table_name, record_id, action, old_data)
+    INSERT INTO auditLog (table_name, record_id, action, old_data)
     VALUES (
         'orders',
         OLD.order_id,
@@ -106,11 +106,11 @@ BEGIN
 END //
 
 -- Trigger for orderitem table deletions
-CREATE TRIGGER orderitem_delete
+CREATE TRIGGER orderitemDelete
 AFTER DELETE ON orderitem
 FOR EACH ROW
 BEGIN
-    INSERT INTO audit_log (table_name, record_id, action, old_data)
+    INSERT INTO auditLog (table_name, record_id, action, old_data)
     VALUES (
         'orderitem',
         CONCAT(OLD.order_id, '-', OLD.product_code),
@@ -120,11 +120,11 @@ BEGIN
 END //
 
 -- Trigger for paymenttransaction table deletions
-CREATE TRIGGER paymenttransaction_delete
+CREATE TRIGGER paymenttransactionDelete
 AFTER DELETE ON paymenttransaction
 FOR EACH ROW
 BEGIN
-    INSERT INTO audit_log (table_name, record_id, action, old_data)
+    INSERT INTO auditLog (table_name, record_id, action, old_data)
     VALUES (
         'paymenttransaction',
         OLD.transaction_id,
@@ -134,7 +134,7 @@ BEGIN
 END //
 
 -- Trigger for productpromotion table deletions
-CREATE TRIGGER productpromotion_delete
+CREATE TRIGGER productpromotionDelete
 AFTER DELETE ON productpromotion
 FOR EACH ROW
 BEGIN
