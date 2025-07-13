@@ -47,9 +47,7 @@ def backup_database(host, user, password, db_name, output_file_prefix):
                     binlog_info['binlog_pos'] = int(match.group(2))
                     print(f"Extracted binlog info: {binlog_info}")
                     break
-        
         if binlog_info:
-            # Ensure config folder exists (absolute path)
             config_folder = os.path.dirname(binlog_info_file)
             os.makedirs(config_folder, exist_ok=True)
 
@@ -57,12 +55,9 @@ def backup_database(host, user, password, db_name, output_file_prefix):
                 json.dump(binlog_info, jf, indent=4)
             print(f"Binlog info saved to JSON file: {binlog_info_file}")
 
-            # keep_last_n_files expects absolute path now
             keep_last_n_files(output_file_prefix_abs, 5)
         else:
             print("Warning: Could not find binlog info in backup file.")
-
     else:
         print(f"Error: {result.stderr.decode('utf-8')}")
-
-backup_database("localhost", "root", "1234", "computer_shop", "../backup/full")
+backup_database("172.23.60.98", "nak", "1234", "computer_shop", "../backup/full")

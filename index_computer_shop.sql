@@ -1,3 +1,27 @@
+
+-- USE computer_shop;
+
+-- -- Drop index on customer phone_number
+-- DROP INDEX idx_customer_phone_number ON customer;
+
+-- -- Drop index on product name
+-- DROP INDEX idx_product_name ON product;
+
+-- -- Drop composite index on orders (customer_id, order_date)
+-- DROP INDEX idx_orders_customer_date ON orders;
+
+-- -- Drop composite index on productfeedback (product_code, feedback_date)
+-- DROP INDEX idx_productfeedback_product_date ON productfeedback;
+
+-- -- Drop composite index on inventorylog (product_code, change_date)
+-- DROP INDEX idx_inventorylog_product_date ON inventorylog;
+
+-- -- Drop index on paymenttransaction(order_id)
+-- DROP INDEX idx_paymenttransaction ON paymenttransaction;
+
+-- -- Drop index on orderitem(order_id)
+-- DROP INDEX idx_orderitem ON orderitem;
+
 -- ========================
 -- INDEXING STRATEGIES
 -- ========================
@@ -12,6 +36,7 @@ CREATE INDEX idx_customer_phone_number ON customer (phone_number);
 -- Description: Speeds up queries that filter or order products by their name,
 -- which is a common operation in e-commerce applications.
 CREATE INDEX idx_product_name ON product (name);
+desc product;
 
 -- 3. Composite Index on orders (customer_id, order_date)
 -- Description: Optimizes queries that retrieve orders for a specific customer,
@@ -28,6 +53,6 @@ CREATE INDEX idx_productfeedback_product_date ON productfeedback (product_code, 
 -- particularly when analyzing changes over time.
 CREATE INDEX idx_inventorylog_product_date ON inventorylog (product_code, change_date);
 
-
 create index idx_paymenttransaction on paymenttransaction(order_id);
 create index idx_orderitem on orderitem(order_id);
+

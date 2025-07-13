@@ -2,57 +2,53 @@ import subprocess
 import json
 import os
 import datetime
-from utils import keep_last_n_files
+import re
 
-def differential_backup_from_config(user, password, host, backup_dir='./backup/differential', config_path='./config/last_full_backup.json'):
-    script_dir = os.path.dirname(os.path.abspath(__file__))
+# --- Configuration ---
+DEFAULT_BACKUP_DIR = '../backup/differential'
+CONFIG_DIR = './config'
+FULL_BACKUP_CONFIG_FILE = os.path.join(CONFIG_DIR, 'last_full_backup.json')
 
-    backup_dir_abs = os.path.abspath(os.path.join(script_dir, backup_dir))
-    config_path_abs = os.path.abspath(os.path.join(script_dir, config_path))
+def sanitize_filename(name):
+    return re.sub(r'[^a-zA-Z0-9_-]', '_', name)
 
-    if not os.path.exists(config_path_abs):
-        print(f"Error: Config file not found at {config_path_abs}. Please run full backup first.")
+def differential_backup(host, user, password, databases):
+    print("\n--- Starting Differential Backup ---")
+    os.makedirs(DEFAULT_BACKUP_DIR, exist_ok=True)
+
+    if not os.path.exists(FULL_BACKUP_CONFIG_FILE):
+        print("Full backup not found. Run fullbackup.py first.")
         return
-    
-    with open(config_path_abs, 'r') as f:
+
+    with open(FULL_BACKUP_CONFIG_FILE, 'r') as f:
         binlog_info = json.load(f)
-    
-    binlog_file = binlog_info.get('binlog_file')
-    start_position = binlog_info.get('binlog_pos')
-    
-    if not binlog_file or not start_position:
-        print("Error: Invalid binlog info in config file.")
-        return
 
-    os.makedirs(backup_dir_abs, exist_ok=True)
+    start_file = binlog_info.get('binlog_file')
+    start_pos = binlog_info.get('binlog_pos')
 
     timestamp = datetime.datetime.now().strftime("%Y-%m-%d_%H-%M-%S")
-    output_file = os.path.join(backup_dir_abs, f"diff_backup_{timestamp}.sql")
+    db_label = sanitize_filename('_'.join(databases))
+    output_file = os.path.join(DEFAULT_BACKUP_DIR, f"diff_backup_{db_label}_{timestamp}.sql")
 
     command = [
         "mysqlbinlog",
-        f"--start-position={start_position}",
+        f"--start-position={start_pos}",
         "--read-from-remote-server",
-        f"--host={host}",
-        f"--user={user}",
-        f"--password={password}",
-        binlog_file
+        f"--host={host}", f"--user={user}", f"--password={password}",
+        *[f"--database={db}" for db in databases],
+        start_file
     ]
 
-    print("Running command:", " ".join(command))
+    print(f"Downloading binlog '{start_file}' from pos {start_pos}...")
+    try:
+        with open(output_file, "w", encoding='utf-8') as f:
+            subprocess.run(command, stdout=f, stderr=subprocess.PIPE, check=True)
+        print(f"Differential backup saved: {output_file}")
 
-    with open(output_file, "w") as out_file:
-        result = subprocess.run(command, stdout=out_file, stderr=subprocess.PIPE)
+    except subprocess.CalledProcessError as e:
+        print(f"Backup failed: {e.stderr.decode('utf-8')}")
+    except FileNotFoundError:
+        print("mysqlbinlog not found in PATH.")
 
-    if result.returncode == 0:
-        print(f"Differential backup successful. File saved as {output_file}.")
-        keep_last_n_files(backup_dir_abs, 105)
-    else:
-        print(f"Error: {result.stderr.decode('utf-8')}")
-
-differential_backup_from_config(
-    user="root",
-    password="1234",
-    host="localhost",
-    backup_dir='../backup/differential'
-)
+if __name__ == "__main__":
+    differential_backup("localhost", "root", "1234", ["computer_shop"] )

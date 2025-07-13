@@ -132,9 +132,9 @@ SELECT
     p.discount_type,
     p.discount_value
 FROM
-    ProductPromotion AS pp
+    productpromotion AS pp
 JOIN
-    Promotion AS p ON p.promotion_id = pp.promotion_id;
+    promotion AS p ON p.promotion_id = pp.promotion_id;
 
 -- Drop and recreate the view for feedback averages
 CREATE VIEW productFeedbackDataAVG AS
@@ -143,7 +143,7 @@ SELECT
     ROUND(AVG(rating), 1) AS rating,
     count_feedback_by_product(product_code) AS feedback_count
 FROM
-    ProductFeedback
+    productfeedback
 GROUP BY
     product_code;
 
@@ -190,7 +190,7 @@ SELECT
     c.name AS customer_name,
     c.profile_img_path
 FROM
-    ProductFeedback AS pf
+    productfeedback AS pf
 JOIN
     customer AS c ON c.customer_id = pf.customer_id;
 
@@ -203,8 +203,6 @@ select * from showDatabaseUser;
 use computer_shop;
 select * from product limit 1;
 
-
-
 select * from productshowinformation p where p.name like "%hardware%" order by p.price DESC;
 
 select * from category c;
@@ -214,7 +212,7 @@ delete from productsupplier ;
 drop database computer_shop;
 create database computer_shop;
 use computer_shop;
-select count(*) from product;
+select count(*) from orderitem;
 desc paymenttransaction;
 
 select * from staff;

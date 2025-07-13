@@ -28,7 +28,6 @@ def restore_database(host, user, password, db_name, input_fullbackup_file,input_
     else:
         print(f"Error: {result.stderr.decode('utf-8')}")
 
-# Example usage
-restore_database("localhost", "root", "1234", "computer_shop", 
+restore_database("localhost", "nak", "1234", "computer_shop", 
                 input_fullbackup_file="../backup/full/full_backup_2025-07-05_23-02-10.sql",
                 input_diff_backup_file="../backup/differential/diff_backup_2025-07-05_23-35-27.sql")
