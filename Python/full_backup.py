@@ -65,4 +65,4 @@ def backup_database(host, user, password, db_name, output_file_prefix):
     else:
         print(f"Error: {result.stderr.decode('utf-8')}")
 
-backup_database("localhost", "root", "1234", "computer_shop", "../backup/full")
+backup_database("localhost", "root", "Panhaygo7$", "computer_shop", "../backup/full")

@@ -19,4 +19,4 @@ def restore_database(host, user, password, db_name, input_file):
     else:
         print(f"Error: {result.stderr.decode('utf-8')}")
 
-restore_database("localhost", "root", "1234", "computer_shop", "../backup/full/full_backup_2025-07-05_23-02-10.sql")
+restore_database("localhost", "root", "Panhaygo7$", "computer_shop", "D:/DB-Adminstration-Computer-Store/backup/full/full_backup_2025-07-13_14-20-01.sql")
