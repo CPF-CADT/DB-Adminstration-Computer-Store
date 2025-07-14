@@ -192,8 +192,6 @@ ORDER BY
     -- fixing view perfoment
     CREATE OR REPLACE VIEW staffPerformance AS
 WITH StaffInventoryProducts AS (
-    -- Step 1: Find which products each active staff member has handled in inventory.
-    -- This also calculates the number of inventory updates per staff member.
     SELECT
         il.staff_id,
         il.product_code,
@@ -204,8 +202,6 @@ WITH StaffInventoryProducts AS (
     GROUP BY il.staff_id, il.product_code
 ),
 ProductSalesMetrics AS (
-    -- Step 2: Calculate sales metrics for each product.
-    -- This aggregates millions of order items into a much smaller set (one row per product).
     SELECT
         oi.product_code,
         SUM(oi.qty * oi.price_at_purchase) AS total_value,
@@ -215,22 +211,15 @@ ProductSalesMetrics AS (
     WHERE o.order_status IN ('Delivered', 'Processing')
     GROUP BY oi.product_code
 )
--- Step 3: Join the pre-aggregated results.
--- We are now joining small tables, not the huge original ones.
 SELECT
     s.staff_id,
     s.name AS staff_name,
     s.position,
-    -- Summing the inventory updates from the first CTE.
     SUM(sip.inventory_updates_for_product) AS inventory_updates,
-    -- Summing the sales values for all products associated with the staff member.
     COALESCE(SUM(psm.total_value), 0) AS total_order_value,
-    -- Summing the order counts for all products associated with the staff member.
     COALESCE(SUM(psm.total_orders), 0) AS total_orders_handled
 FROM staff s
--- Join staff with the products they've handled
 LEFT JOIN StaffInventoryProducts sip ON s.staff_id = sip.staff_id
--- Join those products with their sales metrics
 LEFT JOIN ProductSalesMetrics psm ON sip.product_code = psm.product_code
 WHERE s.is_active = TRUE
 GROUP BY s.staff_id, s.name, s.position;
@@ -240,46 +229,34 @@ GROUP BY s.staff_id, s.name, s.position;
 
 select * from promotionEffectiveness;
 CREATE OR REPLACE VIEW promotionEffectiveness AS
--- CTE to calculate sales for each product that occurred during a valid promotion period.
 WITH SalesDuringPromotion AS (
     SELECT
         p.promotion_id,
         pp.product_code,
-        -- We calculate the total sales value for each product within its specific promotion.
         SUM(oi.qty * oi.price_at_purchase) AS sales_value
     FROM
         promotion p
-    -- Find which products are linked to the promotion
     JOIN productpromotion pp ON p.promotion_id = pp.promotion_id
-    -- Find the order items for those products
     JOIN orderitem oi ON pp.product_code = oi.product_code
-    -- Find the orders for those items
     JOIN orders o ON oi.order_id = o.order_id
     WHERE
-        -- CRITICAL LOGIC FIX: The order must have been placed during the promotion's active window.
         o.order_date BETWEEN p.start_date AND p.end_date
         AND o.order_status = 'Delivered'
-    -- This pre-aggregation is the key to performance.
     GROUP BY
         p.promotion_id,
         pp.product_code
 )
--- Final query to assemble the results for currently active promotions.
 SELECT
     p.promotion_id,
     p.title AS promotion_title,
     p.discount_type,
     p.discount_value,
-    -- Count the distinct products that had sales during this promotion period.
     COUNT(DISTINCT sdp.product_code) AS products_with_sales,
-    -- Sum the pre-calculated sales values. COALESCE handles promotions with zero sales.
     COALESCE(SUM(sdp.sales_value), 0) AS total_sales_under_promotion
 FROM
     promotion p
--- LEFT JOIN to our pre-aggregated data so we can see promotions even if they had zero sales.
 LEFT JOIN SalesDuringPromotion sdp ON p.promotion_id = sdp.promotion_id
 WHERE
-    -- This filter correctly shows the effectiveness of promotions that are active *now*.
     p.start_date <= CURRENT_TIMESTAMP AND p.end_date >= CURRENT_TIMESTAMP
 GROUP BY
     p.promotion_id,
@@ -293,3 +270,32 @@ GROUP BY
 UPDATE promotion
 SET start_date = NOW() - INTERVAL 1 DAY, end_date = NOW() + INTERVAL 1 MONTH
 WHERE promotion_id = 1;
+
+CREATE OR REPLACE VIEW detailedOrderInformation AS
+WITH OrderMetrics AS (
+    -- First, calculate total amount and items for each order
+    SELECT
+        order_id,
+        SUM(qty * price_at_purchase) AS total_amount,
+        SUM(qty) AS total_items
+    FROM
+        orderitem
+    GROUP BY
+        order_id
+)
+SELECT
+    o.order_id,
+    o.order_date,
+    o.order_status,
+    c.customer_id,
+    c.name AS customer_name,
+    c.phone_number AS customer_phone,
+    a.address_id,
+    CONCAT_WS(', ', a.street_line, a.commune, a.district, a.province) AS shipping_address,
+    om.total_amount,
+    om.total_items
+FROM
+    orders o
+JOIN customer c ON o.customer_id = c.customer_id
+JOIN address a ON o.address_id = a.address_id
+LEFT JOIN OrderMetrics om ON o.order_id = om.order_id;
