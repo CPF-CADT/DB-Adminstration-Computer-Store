@@ -73,7 +73,4 @@ This project aims to build a scalable, secure, and high-performance Database Sys
 - [MySQL Documentation](https://dev.mysql.com/doc/)
 - [Express.js Docs](https://expressjs.com/)
 - [JWT Introduction](https://jwt.io/introduction/)
-- [RBAC Best Practices](https://nvlpubs.nist.gov/nistpubs/srb/NIST.SP.800-162.pdf) (Example, link might need adjustment)
-- [SQL Performance Tips](https://www.sqlshack.com/sql-query-performance-tuning-tips/) (Example, link might need adjustment)
 - [W3Schools SQL Tutorial](https://www.w3schools.com/sql/)
-- [DigitalOcean MySQL Backup Guide](https://www.digitalocean.com/community/tutorials/how-to-back-up-your-mysql-databases-on-ubuntu-20-04) (Example, link might need adjustment)
