@@ -1,6 +1,6 @@
 # Computer Shop E Commerce System
 
-A robust and fully-featured database administration project designed for managing the operations of a computer shop.
+A robust and fully-featured database administration project designed for managing the operations of a computer shop. [Video Presentation](https://www.youtube.com/watch?v=imkKAmcyXGE)
 
 ## Table of Contents
 
