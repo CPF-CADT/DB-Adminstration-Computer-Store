@@ -24,7 +24,7 @@ This project aims to build a scalable, secure, and high-performance Database Sys
 - **Stored Procedures, Triggers, and Views**: Utilize advanced database features for efficient data manipulation and reporting.
 - **Performance Testing & Query Optimization**: Ensures high performance and responsiveness of the database system.
 - **Automated Backup & Recovery System**: Robust system for data protection and disaster recovery.
-- **Full Stack Web Application (React + Node.js)**: User-friendly web application for interacting with the database.
+- **[Full Stack Web Application](https://github.com/CPF-CADT/computer-shop) (React + Node.js)**: User-friendly web application for interacting with the database.
 
 ## Technologies Used
 
