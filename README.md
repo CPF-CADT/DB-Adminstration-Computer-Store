@@ -2,7 +2,7 @@
 
 A robust and fully-featured database administration project designed for managing the operations of a computer shop.
 
-## 📚 Table of Contents
+## Table of Contents
 
 - [Project Overview](#-project-overview)
 - [Features](#-features)
@@ -13,11 +13,11 @@ A robust and fully-featured database administration project designed for managin
 - [Learning Outcomes](#-learning-outcomes)
 - [References](#-references)
 
-## 🧩 Project Overview
+## Project Overview
 
 This project aims to build a scalable, secure, and high-performance Database System for a Computer Shop. It handles inventory, orders, payment tracking, user management, and integrates both backend logic and frontend interfaces for practical use.
 
-## ✅ Features
+## Features
 
 - 🔐 **Role-Based Access Control (RBAC)**: Securely manage user privileges and access to different functionalities.
 - 📦 **Order Management**: Comprehensive system for tracking products, and customer orders.
@@ -35,7 +35,7 @@ This project aims to build a scalable, secure, and high-performance Database Sys
 - **Windows Task Scheduler**: Automated backups
 - **MySQLbinlog, mysqldump**: Backup utilities
 
-## 👨‍💻 Team Members
+## Team Members
 
 | Name            |
 | :-------------- |
@@ -68,7 +68,7 @@ This project aims to build a scalable, secure, and high-performance Database Sys
 - Optimized slow SQL with smart indexing.
 - Built backup strategies with real-world recovery cases.
 
-## 🔗 References
+## References
 
 - [MySQL Documentation](https://dev.mysql.com/doc/)
 - [Express.js Docs](https://expressjs.com/)
