@@ -19,14 +19,14 @@ This project aims to build a scalable, secure, and high-performance Database Sys
 
 ## Features
 
-- 🔐 **Role-Based Access Control (RBAC)**: Securely manage user privileges and access to different functionalities.
-- 📦 **Order Management**: Comprehensive system for tracking products, and customer orders.
+- **Role-Based Access Control (RBAC)**: Securely manage user privileges and access to different functionalities.
+- **Order Management**: Comprehensive system for tracking products, and customer orders.
 - **Stored Procedures, Triggers, and Views**: Utilize advanced database features for efficient data manipulation and reporting.
 - **Performance Testing & Query Optimization**: Ensures high performance and responsiveness of the database system.
 - **Automated Backup & Recovery System**: Robust system for data protection and disaster recovery.
 - **Full Stack Web Application (React + Node.js)**: User-friendly web application for interacting with the database.
 
-## 🛠 Technologies Used
+## Technologies Used
 
 - **MySQL 8.0+**: Core DBMS
 - **Python**: Data generation scripts
